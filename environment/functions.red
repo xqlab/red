@@ -689,7 +689,7 @@ split: func [
 	{Break a string series into pieces using the provided delimiters} 
 	series [any-string!] dlm [string! char!  bitset!]  /local s  num
 ] [
-	either string? dlm [num: length? dlm] [num 1]
+	either string? dlm [num: length? dlm] [num: 1]
 	collect [
 		parse series [
 			any [[copy s to dlm num skip (keep s)] | [copy s to end (keep s) skip] ]
